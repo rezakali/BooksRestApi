@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const { format } = require("winston");
 const winston = require("winston");
 const app = express();
-require("dotenv").config();
+require("dotenv").config({path: '.env'});
 const bookRoute = require("./routes/books");
 
 const PORT = process.env.PORT || 3000;
