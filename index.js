@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const { format } = require("winston");
 const winston = require("winston");
 const app = express();
-require("dotenv").config({path: '.env'});
+require("dotenv").config({path: ''});
 const bookRoute = require("./routes/books");
 
 const PORT = process.env.PORT || 3000;
@@ -30,7 +30,7 @@ app.use("/api/books", bookRoute);
 
 /* COnNECT to mongodb atlas */
 mongoose
-  .connect(process.env.MONGO_URL, { useNewUrlParser: true })
+  .connect('mongodb+srv://rezakali:rezakali@cluster0.qxnihgf.mongodb.net/booksdb?retryWrites=true&w=majority', { useNewUrlParser: true })
   .then(() => {
     logger.info("Connected to mongo DB")
   })
